@@ -24,9 +24,12 @@ public class Persoon {
         public void setGeboorteDatum(int dag, int maand, int jaar) {
             this.geboorteDatum = LocalDate.of(jaar, maand, dag);
         }
-        public int getLeeftijd(){
+        public int getLeeftijd() {
             LocalDate vandaag = LocalDate.now();
             int leeftijd = vandaag.getYear() - geboorteDatum.getYear();
+            //if (vandaag.getDayofYear () < geboortedatum.getDayofYear){
+            // leeftijd--;
+       // }
             LocalDate verjaardag = geboorteDatum.plusYears(leeftijd);
             if (verjaardag.compareTo(vandaag) > 0){
                 leeftijd--;
